@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>西園寺家の次女・茉優ちゃん、1歳の誕生日を迎える！ - Yahoo!ニュース</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #f4f4f4; color: #333; font-size: 15px; }
+
+    /* ヘッダー */
+    .header {
+      background: #ff0033;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-logo {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: -1px;
+    }
+    .header-logo span { color: #ffcc00; }
+    .header-nav {
+      display: flex;
+      gap: 12px;
+      margin-left: 16px;
+    }
+    .header-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    /* ニュースカテゴリバー */
+    .category-bar {
+      background: white;
+      border-bottom: 2px solid #ff0033;
+      padding: 0 16px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    .category-bar a {
+      display: block;
+      padding: 10px 14px;
+      text-decoration: none;
+      color: #333;
+      font-size: 13px;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+    }
+    .category-bar a.active {
+      color: #ff0033;
+      border-bottom: 3px solid #ff0033;
+      font-weight: bold;
+    }
+
+    /* メインコンテナ */
+    .container {
+      max-width: 780px;
+      margin: 16px auto;
+      padding: 0 12px;
+      display: flex;
+      gap: 20px;
+    }
+
+    /* 記事本体 */
+    .article-wrap {
+      flex: 1;
+      background: white;
+      border-radius: 4px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .article-source {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 6px;
+    }
+    .article-source span {
+      color: #ff0033;
+      font-weight: bold;
+    }
+
+    .article-title {
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      color: #111;
+    }
+
+    .article-meta {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .article-thumbnail {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #ffe4ec, #fff0f5);
+      border-radius: 6px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 72px;
+      border: 1px solid #eee;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-thumbnail::before {
+      content: '';
+      position: absolute;
+      top: -20px; left: -20px;
+      width: 120px; height: 120px;
+      background: rgba(255,200,200,0.3);
+      border-radius: 50%;
+    }
+    .article-thumbnail::after {
+      content: '🎀';
+      position: absolute;
+      top: 10px; right: 16px;
+      font-size: 32px;
+    }
+    .thumb-caption {
+      font-size: 13px;
+      color: #888;
+      margin-top: 8px;
+    }
+
+    .article-body p {
+      line-height: 1.85;
+      margin-bottom: 14px;
+      font-size: 15px;
+      color: #222;
+    }
+
+    .article-body .highlight {
+      background: #fff9e6;
+      border-left: 4px solid #ffcc00;
+      padding: 10px 14px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .article-body .bold { font-weight: bold; color: #111; }
+
+    /* タグ */
+    .tags {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tags a {
+      background: #f0f0f0;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      text-decoration: none;
+      color: #555;
+    }
+    .tags a:hover { background: #e0e0e0; }
+
+    /* SNSシェアボタン */
+    .share-bar {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .share-btn {
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      color: white;
+    }
+    .share-btn.twitter { background: #1da1f2; }
+    .share-btn.line { background: #06c755; }
+    .share-btn.copy { background: #888; }
+
+    /* 関連記事 */
+    .related-section {
+      margin-top: 28px;
+      border-top: 2px solid #f0f0f0;
+      padding-top: 16px;
+    }
+    .related-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #ff0033;
+      margin-bottom: 12px;
+    }
+    .related-item {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      text-decoration: none;
+      color: #333;
+    }
+    .related-thumb {
+      width: 72px;
+      height: 52px;
+      background: #eee;
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    .related-text {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .related-text .rel-meta {
+      font-size: 11px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    /* コメント */
+    .comment-section {
+      margin-top: 24px;
+      border-top: 2px solid #f0f0f0;
+      padding-top: 16px;
+    }
+    .comment-title {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .comment-count {
+      background: #ff0033;
+      color: white;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    .comment-item {
+      border: 1px solid #eee;
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: #fafafa;
+    }
+    .comment-user {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 6px;
+    }
+    .comment-text {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .comment-reaction {
+      display: flex;
+      gap: 14px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #888;
+    }
+    .comment-reaction span { cursor: pointer; }
+    .comment-reaction .good { color: #ff6600; }
+
+    /* サイドバー */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+    }
+    .sidebar-card {
+      background: white;
+      border-radius: 4px;
+      padding: 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .sidebar-card-title {
+      font-size: 13px;
+      font-weight: bold;
+      border-bottom: 2px solid #ff0033;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .sidebar-item {
+      font-size: 13px;
+      padding: 7px 0;
+      border-bottom: 1px solid #f0f0f0;
+      line-height: 1.5;
+      color: #444;
+    }
+    .sidebar-item:last-child { border-bottom: none; }
+
+    @media (max-width: 600px) {
+      .sidebar { display: none; }
+      .article-title { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<div class="header">
+  <div class="header-logo">Yahoo!<span>ニュース</span></div>
+  <div class="header-nav">
+    <a href="#">トップ</a>
+    <a href="#">速報</a>
+    <a href="#">ライブ</a>
+    <a href="#">個人</a>
+  </div>
+</div>
+
+<!-- カテゴリバー -->
+<div class="category-bar">
+  <a href="#">主要</a>
+  <a href="#">国内</a>
+  <a href="#">国際</a>
+  <a href="#">経済</a>
+  <a href="#" class="active">エンタメ</a>
+  <a href="#">スポーツ</a>
+  <a href="#">IT・科学</a>
+  <a href="#">ライフ</a>
+  <a href="#">地域</a>
+</div>
+
+<!-- メインコンテナ -->
+<div class="container">
+
+  <!-- 記事 -->
+  <div class="article-wrap">
+    <div class="article-source"><span>ライフ＆ファミリー通信</span></div>
+    <h1 class="article-title">西園寺家の次女・茉優ちゃん、きょう1歳の誕生日を迎える　家族で盛大にお祝い🎂</h1>
+    <div class="article-meta">
+      <span>2026年6月11日(木)  10:30</span>
+      <span>|</span>
+      <span>👁 2,481</span>
+    </div>
+
+    <!-- サムネイル -->
+    <div class="article-thumbnail">
+      👶🎂
+      <div class="thumb-caption">1歳の誕生日を迎えた茉優ちゃん（イメージ）</div>
+    </div>
+
+    <!-- 本文 -->
+    <div class="article-body">
+      <p>
+        <span class="bold">西園寺家の次女・茉優（まゆ）ちゃんが、本日2026年6月11日にめでたく1歳の誕生日を迎えた。</span>
+        生まれてからの1年間、すくすくと成長を続けてきた茉優ちゃんの節目の日を記念し、家族全員で盛大なバースデーパーティーが行われた模様だ。
+      </p>
+
+      <p>
+        茉優ちゃんは2025年6月11日に誕生。命名の由来について、家族は「"茉"という字には白くて清らかな花・茉莉花（ジャスミン）の意味があり、"優"には優しさと品を込めた」と語っており、その名前の通り、おだやかで笑顔の絶えない女の子に育っているという。
+      </p>
+
+      <div class="highlight">
+        💬「あっという間の1年でした。毎日が発見と喜びの連続で、この子に教えてもらうことばかりです」（家族コメント）
+      </div>
+
+      <p>
+        1歳の誕生日恒例の「一升餅」では、大きなお餅をしっかり背負って元気な姿を見せた茉優ちゃん。「選び取り」の儀式では、並べられたアイテムの中から<span class="bold">迷わず絵本を選び取った</span>といい、「もしかして読書家になるかも！」と家族は嬉しそうに話した。
+      </p>
+
+      <p>
+        誕生日ケーキは、乳製品・砂糖不使用の体に優しい「スマッシュケーキ」を特別注文。茉優ちゃんはケーキを両手でぐちゃぐちゃにしながら、満面の笑みを見せ、その様子を家族全員が笑顔で見守った。
+      </p>
+
+      <p>
+        すでにつかまり立ちや数歩の一人歩きも見せるようになってきた茉優ちゃん。これからの成長がますます楽しみだ。
+      </p>
+    </div>
+
+    <!-- タグ -->
+    <div class="tags">
+      <a href="#">誕生日</a>
+      <a href="#">1歳</a>
+      <a href="#">茉優</a>
+      <a href="#">赤ちゃん</a>
+      <a href="#">一升餅</a>
+      <a href="#">子育て</a>
+    </div>
+
+    <!-- シェアボタン -->
+    <div class="share-bar">
+      <button class="share-btn twitter">𝕏 シェア</button>
+      <button class="share-btn line">LINE</button>
+      <button class="share-btn copy">🔗 URLコピー</button>
+    </div>
+
+    <!-- 関連記事 -->
+    <div class="related-section">
+      <div class="related-title">▼ 関連記事</div>
+      <a class="related-item" href="#">
+        <div class="related-thumb">🍼</div>
+        <div class="related-text">
+          赤ちゃんの「一升餅」とは？意味と準備のポイントを解説
+          <div class="rel-meta">子育てメディア・ほっこり  6/10</div>
+        </div>
+      </a>
+      <a class="related-item" href="#">
+        <div class="related-thumb">🎂</div>
+        <div class="related-text">
+          「スマッシュケーキ」とは？1歳バースデーにおすすめの理由
+          <div class="rel-meta">グルメ＆ライフ  6/8</div>
+        </div>
+      </a>
+      <a class="related-item" href="#">
+        <div class="related-thumb">👧</div>
+        <div class="related-text">
+          「選び取り」で絵本を選んだ子供のその後――親たちの証言
+          <div class="rel-meta">ライフ＆ファミリー通信  6/5</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- コメント欄 -->
+    <div class="comment-section">
+      <div class="comment-title">
+        みんなのコメント <span class="comment-count">23件</span>
+      </div>
+
+      <div class="comment-item">
+        <div class="comment-user">🐤 さくらのはる さん  ・  6時間前</div>
+        <div class="comment-text">おめでとうございます🎉 茉優ちゃん、絵本を選ぶとは将来が楽しみですね！</div>
+        <div class="comment-reaction">
+          <span class="good">👍 役に立った 87</span>
+          <span>👎 18</span>
+          <span>返信</span>
+        </div>
+      </div>
+
+      <div class="comment-item">
+        <div class="comment-user">🌸 みかんみかん さん  ・  5時間前</div>
+        <div class="comment-text">一升餅もスマッシュケーキも、今の時代らしいお祝いで素敵です。1歳おめでとう🎂</div>
+        <div class="comment-reaction">
+          <span class="good">👍 役に立った 61</span>
+          <span>👎 7</span>
+          <span>返信</span>
+        </div>
+      </div>
+
+      <div class="comment-item">
+        <div class="comment-user">🌿 やまのとり さん  ・  3時間前</div>
+        <div class="comment-text">茉優ちゃんという名前、とても美しいですね。健やかに育ってほしいです。</div>
+        <div class="comment-reaction">
+          <span class="good">👍 役に立った 44</span>
+          <span>👎 3</span>
+          <span>返信</span>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /article-wrap -->
+
+  <!-- サイドバー -->
+  <div class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">📰 ライフ 主要ニュース</div>
+      <div class="sidebar-item">初めての「離乳食」どう進める？最新ガイドラインを解説</div>
+      <div class="sidebar-item">子育て支援金、2026年度から拡充へ　対象年齢も広がる</div>
+      <div class="sidebar-item">「名前の画数」で選ぶ命名、再ブームの背景とは</div>
+      <div class="sidebar-item">赤ちゃん用品、今年のヒット商品ランキングTOP5</div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">🔥 今日のトレンド</div>
+      <div class="sidebar-item">1. 茉優ちゃん誕生日</div>
+      <div class="sidebar-item">2. スマッシュケーキ</div>
+      <div class="sidebar-item">3. 一升餅</div>
+      <div class="sidebar-item">4. 選び取り</div>
+      <div class="sidebar-item">5. 子育て支援</div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+</body>
+</html>

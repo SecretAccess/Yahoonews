@@ -15,11 +15,11 @@
       margin: 0 auto;
     }
 
-    /* ===== スマホヘッダー ===== */
+    /* ===== ヘッダー ===== */
     .sp-header {
       background: #fff;
-      border-bottom: 1px solid #e8e8e8;
-      padding: 10px 14px;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 8px 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -30,204 +30,222 @@
     .sp-logo {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
     }
     .sp-logo img {
-      height: 22px;
+      height: 20px;
     }
     .sp-logo-fallback {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       color: #7B0099;
       font-style: italic;
-      display: none;
     }
     .sp-logo-news {
       font-size: 15px;
       font-weight: bold;
       color: #222;
-      margin-left: 2px;
     }
     .sp-header-icons {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
     }
-    .sp-header-icons span {
+    .sp-header-icons .icon-btn {
       font-size: 20px;
+      color: #444;
       cursor: pointer;
-      color: #555;
-    }
-    .sp-header-icons .bell-wrap {
       position: relative;
     }
-    .sp-header-icons .bell-badge {
+    .bell-badge {
       position: absolute;
-      top: -4px; right: -6px;
+      top: -4px; right: -5px;
       background: #e60026;
       color: #fff;
-      font-size: 9px;
-      width: 16px; height: 16px;
+      font-size: 8px;
+      width: 14px; height: 14px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
     }
+    .y-icon-round {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #7B0099;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+    }
 
-    /* くじバナー */
+    /* ===== サブナビ（ライフ・子育て学び） ===== */
+    .subnav {
+      background: #fff;
+      border-bottom: 1px solid #e8e8e8;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      font-size: 12px;
+      color: #666;
+    }
+    .subnav a {
+      text-decoration: none;
+      color: #7B0099;
+      white-space: nowrap;
+    }
+    .subnav-sep { color: #ccc; }
+
+    /* ===== くじバナー ===== */
     .kuji-bar {
       background: #fff;
       border-bottom: 1px solid #eee;
-      padding: 9px 14px;
+      padding: 8px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-    .kuji-bar-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
       font-size: 13px;
-      color: #333;
     }
-    .kuji-icon {
-      font-size: 16px;
-    }
-    .kuji-bar-right {
-      font-size: 13px;
-      color: #7B0099;
-      font-weight: bold;
-    }
+    .kuji-left { display: flex; align-items: center; gap: 6px; color: #333; }
+    .kuji-right { color: #7B0099; font-weight: bold; font-size: 13px; }
 
-    /* ===== メインビジュアル ===== */
-    .mv-wrap {
-      width: 100%;
-      position: relative;
-    }
+    /* ===== メイン画像 ===== */
+    .mv-wrap { position: relative; width: 100%; }
     .mv-img {
       width: 100%;
       aspect-ratio: 16/9;
-      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 35%, #ffe0b2 70%, #fff9c4 100%);
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg,#fce4ec,#f8bbd0 40%,#ffe0b2);
+    }
+    .mv-img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg,#fce4ec 0%,#f8bbd0 40%,#ffe0b2 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 90px;
-      position: relative;
-      overflow: hidden;
-    }
-    .mv-img::before {
-      content: '';
-      position: absolute;
-      top: -20px; left: -20px;
-      width: 160px; height: 160px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 50%;
+      font-size: 80px;
     }
     .mv-credit {
       position: absolute;
-      bottom: 8px; right: 10px;
-      background: rgba(0,0,0,0.52);
+      bottom: 8px; right: 8px;
+      background: rgba(0,0,0,0.5);
       color: #fff;
       font-size: 10px;
       padding: 2px 7px;
       border-radius: 3px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
     }
-    .mv-credit::before { content: '©'; }
+    .mv-source-badge {
+      position: absolute;
+      top: 8px; left: 8px;
+      background: #e60026;
+      color: #fff;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 3px;
+      letter-spacing: 1px;
+    }
 
-    /* ===== 記事ヘッダー部 ===== */
+    /* ===== 記事タイトル部 ===== */
     .article-head {
-      padding: 14px 14px 10px;
-      border-bottom: 1px solid #f0f0f0;
+      padding: 12px 14px 8px;
     }
     .article-title {
-      font-size: 19px;
+      font-size: 18px;
       font-weight: bold;
       line-height: 1.55;
       color: #111;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
-    .article-title .source-inline {
-      font-size: 13px;
-      font-weight: normal;
+    .article-source-row {
+      font-size: 12px;
       color: #888;
-      margin-left: 6px;
+      margin-bottom: 8px;
     }
     .article-reactions {
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-top: 8px;
       font-size: 12px;
-      color: #666;
+      color: #555;
+      margin-bottom: 2px;
     }
-    .reaction-icon { font-size: 15px; }
     .reaction-avatars {
       display: flex;
     }
     .reaction-avatar {
-      width: 22px; height: 22px;
+      width: 20px; height: 20px;
       border-radius: 50%;
       border: 1.5px solid #fff;
-      margin-left: -6px;
-      background: #ddd;
+      margin-left: -5px;
+      background: #eee;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
-      overflow: hidden;
+      font-size: 10px;
     }
     .reaction-avatar:first-child { margin-left: 0; }
 
+    /* ===== 導入文 ===== */
+    .article-intro {
+      padding: 0 14px 12px;
+      font-size: 15px;
+      line-height: 1.85;
+      color: #222;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
     /* ===== ポイントボックス ===== */
-    .point-box-wrap {
+    .point-box {
       padding: 12px 14px;
       border-bottom: 1px solid #f0f0f0;
     }
-    .point-box-label {
-      display: inline-flex;
+    .point-box-top {
+      display: flex;
       align-items: center;
       gap: 6px;
-      background: #eef6ff;
-      color: #0066cc;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 4px 12px;
-      border-radius: 20px;
-      margin-bottom: 10px;
-    }
-    .point-box-mascots {
-      display: flex;
-      gap: 4px;
       margin-bottom: 8px;
     }
     .mascot {
-      width: 36px; height: 36px;
+      width: 32px; height: 32px;
       border-radius: 50%;
       background: #f5e6d3;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 18px;
     }
-    .point-box-text {
+    .point-label {
+      background: #e8f4fd;
+      color: #0066cc;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 14px;
+      border-radius: 20px;
+      border: 1px solid #b3d9f5;
+    }
+    .point-text {
       font-size: 14px;
-      line-height: 1.75;
-      color: #222;
-      letter-spacing: 0.03em;
+      line-height: 1.8;
+      color: #111;
+      letter-spacing: 0.02em;
     }
 
-    /* ===== 記事全文ボタン ===== */
+    /* ===== 全文ボタン ===== */
     .read-full-btn {
       display: block;
-      width: calc(100% - 28px);
-      margin: 14px auto;
-      padding: 14px;
+      margin: 14px;
+      padding: 13px;
       text-align: center;
-      border: 1.5px solid #ccc;
+      border: 1.5px solid #bbb;
       border-radius: 6px;
       font-size: 15px;
       color: #333;
@@ -237,9 +255,9 @@
       text-decoration: none;
     }
 
-    /* ===== 記事本文 ===== */
+    /* ===== 本文 ===== */
     .article-body {
-      padding: 16px 14px;
+      padding: 4px 14px 16px;
       border-top: 1px solid #eee;
     }
     .article-body p {
@@ -248,71 +266,113 @@
       color: #222;
       margin-bottom: 16px;
     }
-    .article-body .kv-text {
-      font-size: 15px;
-      font-weight: bold;
-      color: #111;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-    .article-body .quote-box {
+    .article-body p:first-child { margin-top: 14px; }
+    .quote-box {
       background: #f8f8f8;
       border-left: 3px solid #ccc;
-      padding: 12px 14px;
-      margin: 16px 0;
+      padding: 10px 12px;
+      margin: 0 0 16px;
       font-size: 14px;
       color: #555;
       line-height: 1.8;
       border-radius: 0 4px 4px 0;
     }
 
-    /* ===== こんなトピックスも ===== */
-    .related-section {
-      border-top: 8px solid #f2f2f2;
-      padding: 14px 14px 0;
+    /* ===== 関連リンク（青文字リスト） ===== */
+    .related-links {
+      padding: 12px 14px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      background: #fafafa;
     }
-    .related-section-title {
-      font-size: 14px;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 12px;
-    }
-    .related-item {
-      display: flex;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid #f0f0f0;
+    .related-links a {
+      display: block;
+      color: #0066cc;
+      font-size: 13px;
       text-decoration: none;
-      color: #333;
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+      line-height: 1.5;
     }
-    .related-item:last-child {
-      border-bottom: none;
-      padding-bottom: 4px;
+    .related-links a:last-child { border-bottom: none; }
+    .related-links a::before { content: '▶ '; font-size: 10px; }
+
+    /* ===== 火災知識バナー風ブロック ===== */
+    .info-banner {
+      margin: 0 14px 14px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 12px;
+      background: #fff;
     }
-    .related-thumb {
-      width: 80px;
-      height: 60px;
+    .info-banner-title {
+      font-size: 12px;
+      font-weight: bold;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .info-banner-item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid #f5f5f5;
+      text-decoration: none;
+      color: #222;
+    }
+    .info-banner-item:last-child { border-bottom: none; }
+    .info-banner-thumb {
+      width: 56px; height: 40px;
       border-radius: 4px;
       background: #f5e6ff;
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      font-size: 20px;
+    }
+    .info-banner-text { font-size: 12px; line-height: 1.5; color: #333; }
+
+    /* ===== あなたへのおすすめ ===== */
+    .recommend-section {
+      border-top: 8px solid #f2f2f2;
+      padding: 14px 14px 0;
+    }
+    .recommend-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 12px;
+    }
+    .recommend-item {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      text-decoration: none;
+      color: #333;
+    }
+    .recommend-item:last-child { border-bottom: none; padding-bottom: 4px; }
+    .recommend-thumb {
+      width: 80px; height: 60px;
+      border-radius: 4px;
+      background: #eee;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
       overflow: hidden;
     }
-    .related-info {}
-    .related-title-text {
-      font-size: 14px;
+    .recommend-info {}
+    .recommend-headline {
+      font-size: 13px;
       font-weight: bold;
       line-height: 1.5;
       color: #111;
       margin-bottom: 4px;
     }
-    .related-meta {
-      font-size: 11px;
-      color: #aaa;
-    }
+    .recommend-meta { font-size: 11px; color: #aaa; }
 
     /* ===== コメント ===== */
     .comment-section {
@@ -323,226 +383,237 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 0 10px;
-      border-bottom: 1px solid #f0f0f0;
+      padding: 13px 0 10px;
+      border-bottom: 1px solid #eee;
     }
     .comment-header-left {
-      display: flex;
-      align-items: center;
-      gap: 6px;
       font-size: 15px;
       font-weight: bold;
       color: #222;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
-    .comment-header-left span { font-size: 18px; }
+    .comment-count-small { font-size: 13px; color: #888; font-weight: normal; }
     .comment-toggle {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       font-size: 12px;
       color: #666;
     }
-    .comment-toggle input[type=checkbox] { width: 16px; height: 16px; }
-
-    /* コメント入力 */
     .comment-write {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 0;
-      border-bottom: 1px solid #f0f0f0;
+      gap: 8px;
+      padding: 11px 0;
+      border-bottom: 1px solid #eee;
       cursor: pointer;
     }
-    .comment-write-icon { font-size: 18px; color: #7B0099; }
-    .comment-write-text { font-size: 14px; color: #7B0099; font-weight: bold; }
+    .comment-write-icon { font-size: 16px; color: #7B0099; }
+    .comment-write-label { font-size: 14px; color: #7B0099; font-weight: bold; }
 
-    /* コメントアイテム */
     .comment-item {
-      padding: 14px 0;
+      padding: 13px 0;
       border-bottom: 1px solid #f0f0f0;
     }
     .comment-item:last-child { border-bottom: none; }
-    .comment-item-top {
+    .comment-top {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
-    .comment-user-info {
+    .comment-user-row {
       display: flex;
       align-items: center;
       gap: 8px;
     }
     .comment-avatar {
-      width: 36px; height: 36px;
+      width: 34px; height: 34px;
       border-radius: 50%;
-      background: #e0e0e0;
+      background: #ddd;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 17px;
       flex-shrink: 0;
     }
-    .comment-user-detail {}
-    .comment-username {
+    .comment-name {
       font-size: 13px;
       font-weight: bold;
       color: #222;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
-    .expert-badge {
+    .expert-tag {
       background: #e8f4fd;
       color: #0066aa;
       font-size: 10px;
       padding: 1px 6px;
       border-radius: 3px;
-      font-weight: normal;
       border: 1px solid #b3d9f5;
+      font-weight: normal;
     }
-    .comment-time {
-      font-size: 11px;
-      color: #aaa;
-      margin-top: 2px;
-    }
+    .comment-time-sub { font-size: 11px; color: #aaa; margin-top: 1px; }
     .follow-btn {
       background: #fff;
       border: 1.5px solid #7B0099;
       color: #7B0099;
       font-size: 12px;
       font-weight: bold;
-      padding: 5px 12px;
+      padding: 4px 11px;
       border-radius: 20px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 4px;
       white-space: nowrap;
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 3px;
     }
-    .comment-text {
+    .comment-body {
       font-size: 14px;
       line-height: 1.75;
       color: #222;
-      margin-bottom: 10px;
-      padding-left: 44px;
+      padding-left: 42px;
+      margin-bottom: 9px;
     }
-    .comment-text .more {
-      color: #7B0099;
-      font-size: 13px;
+    .comment-body .more { color: #7B0099; font-size: 13px; }
+    .comment-sns-icon {
+      padding-left: 42px;
+      margin-bottom: 8px;
+      font-size: 20px;
     }
-    .comment-reactions {
+    .comment-reacts {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding-left: 44px;
+      gap: 14px;
+      padding-left: 42px;
     }
-    .c-react-item {
+    .c-react {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
       font-size: 12px;
-      color: #666;
+      color: #555;
       cursor: pointer;
     }
-    .c-react-icon { font-size: 16px; }
-    .c-react-label { font-size: 11px; }
-    .c-react-num { font-size: 14px; font-weight: bold; }
-    .reply-btn {
-      font-size: 12px;
-      color: #7B0099;
-      cursor: pointer;
+    .c-react-icon { font-size: 15px; }
+    .c-react-label { font-size: 10px; color: #999; }
+    .c-react-num { font-size: 13px; font-weight: bold; color: #333; }
+    .reply-count {
       margin-left: auto;
-    }
-
-    /* SNSシェアボタン（コメント下） */
-    .share-row {
-      display: flex;
-      gap: 8px;
-      padding: 14px 0;
-      border-top: 1px solid #f0f0f0;
-      border-bottom: 1px solid #f0f0f0;
-      justify-content: center;
-    }
-    .share-btn {
-      padding: 9px 18px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: bold;
-      border: none;
+      font-size: 12px;
+      color: #7B0099;
       cursor: pointer;
-      color: white;
     }
-    .share-btn.x    { background: #000; }
-    .share-btn.line { background: #06c755; }
-    .share-btn.copy { background: #888; }
-
-    /* フッター */
-    .sp-footer {
+    .see-more-comments {
+      display: block;
       text-align: center;
-      padding: 20px 14px;
+      padding: 14px;
+      font-size: 14px;
+      color: #7B0099;
+      font-weight: bold;
+      border-top: 1px solid #eee;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* ===== あなたへのおすすめ（下部） ===== */
+    .bottom-recommend {
+      border-top: 8px solid #f2f2f2;
+      padding: 14px;
+    }
+    .bottom-recommend-title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 12px;
+    }
+    .br-item {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      text-decoration: none;
+      color: #333;
+    }
+    .br-item:last-child { border-bottom: none; }
+    .br-thumb {
+      width: 80px; height: 60px;
+      background: #eee;
+      border-radius: 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    .br-text { font-size: 12px; line-height: 1.5; color: #111; }
+    .br-meta { font-size: 11px; color: #aaa; margin-top: 3px; }
+
+    /* ===== フッター ===== */
+    .sp-footer {
+      background: #f8f8f8;
+      text-align: center;
+      padding: 18px 14px;
       font-size: 11px;
       color: #bbb;
+      border-top: 1px solid #eee;
     }
 
     @media print {
       .sp-header { position: static; }
-      .kuji-bar  { display: none; }
-      .read-full-btn { display: none; }
-      .share-row { display: none; }
-      .comment-section { display: none; }
-      .sp-footer { display: none; }
+      .kuji-bar, .read-full-btn, .comment-section, .sp-footer { display: none; }
     }
   </style>
 </head>
 <body>
 
-<!-- ===== スマホヘッダー ===== -->
+<!-- ===== ヘッダー ===== -->
 <div class="sp-header">
   <div class="sp-logo">
     <img src="Yahoo.png" alt="Y!"
-         onerror="this.style.display='none'; document.getElementById('logo-fb').style.display='block';" />
-    <span id="logo-fb" class="sp-logo-fallback" style="display:none;">Y!</span>
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+    <span class="sp-logo-fallback" style="display:none;">Y!</span>
     <span class="sp-logo-news"></span>
   </div>
   <div class="sp-header-icons">
-    <span>🔍</span>
-    <div class="bell-wrap">
-      <span>🔔</span>
-      <div class="bell-badge">1</div>
-    </div>
-    <img src="Yahoo.png" alt="Y"
-         style="height:20px; border-radius:4px;"
-         onerror="this.style.display='none';" />
-    <span>☰</span>
+    <span class="icon-btn">🔍</span>
+    <span class="icon-btn bell-wrap">🔔<span class="bell-badge">1</span></span>
+    <span class="y-icon-round">Y</span>
+    <span class="icon-btn">☰</span>
   </div>
+</div>
+
+<!-- サブナビ -->
+<div class="subnav">
+  <a href="#">ライフ</a>
+  <span class="subnav-sep">›</span>
+  <a href="#">子育て・学び</a>
 </div>
 
 <!-- くじバナー -->
 <div class="kuji-bar">
-  <div class="kuji-bar-left">
-    <span class="kuji-icon">🎯</span>
-    <span>毎日引けるくじ　今すぐ挑戦</span>
-  </div>
-  <div class="kuji-bar-right">ログイン ›</div>
+  <div class="kuji-left">🎯 毎日引けるくじ　今すぐ挑戦</div>
+  <div class="kuji-right">ログイン ›</div>
 </div>
 
-<!-- ===== メインビジュアル ===== -->
+<!-- ===== メイン画像 ===== -->
 <div class="mv-wrap">
-  <div class="mv-img">👶🎂</div>
+  <img src="main.png" alt="茉優ちゃん1歳誕生日" class="mv-img"
+       onerror="this.style.display='none'; document.getElementById('mv-placeholder').style.display='flex';" />
+  <div id="mv-placeholder" class="mv-img-placeholder" style="display:none;">👶🎂</div>
   <div class="mv-credit">家族提供・イメージ</div>
 </div>
 
-<!-- ===== 記事ヘッダー ===== -->
+<!-- ===== 記事タイトル ===== -->
 <div class="article-head">
-  <h1 class="article-title">
-    茉優ちゃん、きょう1歳の誕生日　家族みんなで盛大にお祝い、笑顔あふれる一日に
-    <span class="source-inline">ライフ＆ファミリー通信</span>
-  </h1>
+  <h1 class="article-title">茉優ちゃん、きょう1歳の誕生日　家族みんなで盛大にお祝い、笑顔あふれる一日に</h1>
+  <div class="article-source-row">ライフ＆ファミリー通信　2026年6月11日（木）10:30 配信</div>
   <div class="article-reactions">
-    <span class="reaction-icon">💬</span>
-    <span>31＋解説</span>
+    💬 31＋解説
     <div class="reaction-avatars">
       <div class="reaction-avatar">🌸</div>
       <div class="reaction-avatar">🌿</div>
@@ -552,232 +623,262 @@
 </div>
 
 <!-- ===== 導入文 ===== -->
-<div style="padding: 14px 14px 0;">
-  <p class="kv-text" style="font-size:15px; line-height:1.8; color:#222; font-weight:normal;">
-    茉優（まゆ）ちゃんが本日、1歳の誕生日を迎えた。誕生からの一年間、家族の愛情に包まれすくすくと成長してきた。笑顔の絶えないその様子に、周囲も自然と温かい気持ちになれる一日となった。...
-  </p>
+<div class="article-intro">
+  茉優（まゆ）ちゃんが本日、1歳の誕生日を迎えた。誕生からの一年間、家族の愛情に包まれすくすくと成長してきた。笑顔の絶えないその様子に、周囲も自然と温かい気持ちになれる一日となった。…
 </div>
 
 <!-- ===== ポイントボックス ===== -->
-<div class="point-box-wrap">
-  <div class="point-box-mascots">
+<div class="point-box">
+  <div class="point-box-top">
     <div class="mascot">🐻</div>
     <div class="mascot">🤖</div>
-    <div class="point-box-label">ここがポイント</div>
+    <div class="point-label">ここがポイント</div>
   </div>
-  <div class="point-box-text">
+  <div class="point-text">
     茉優ちゃん、1歳の誕生日を迎え一升餅も元気に背負う。「選び取り」では迷わず絵本を選択。家族の愛情の中、すくすくと成長中。
   </div>
 </div>
 
-<!-- 記事全文ボタン -->
+<!-- 全文ボタン -->
 <a class="read-full-btn" href="#">記事全文を読む</a>
 
-<!-- ===== 記事本文 ===== -->
+<!-- ===== 本文 ===== -->
 <div class="article-body">
   <p>
     茉優ちゃんは2025年6月11日に誕生した。「"茉"の字は白く清らかなジャスミンの花を意味し、"優"には優しさと品を宿してほしいという想いを込めた」と名前の由来を聞かせてくれた。命名の通り、おだやかで人懐っこい笑顔の女の子に育っているという。
   </p>
-
   <p>
     誕生日当日は、家族全員が集まって盛大なバースデーパーティーを開催。1歳の誕生日恒例の伝統行事「一升餅」では、重さ約2キロの大きなお餅を背負った茉優ちゃんが、少しふらつきながらも懸命に踏ん張る姿を見せ、その場にいた全員が温かい拍手を送ったという。
   </p>
-
   <div class="quote-box">
     「ちょうど1年前の今日のことが、まるで昨日のことのようです。毎日何かしら新しいことができるようになって、成長を間近で見られるのが何よりの喜びです」
   </div>
-
   <p>
     その後に行われた「選び取り」の儀式では、絵本・そろばん・筆・ハサミ・お金など複数のアイテムをずらりと並べたところ、茉優ちゃんは迷わず絵本に手を伸ばした。「本が好きな子になるかも」と家族は笑顔で話してくれた。
   </p>
-
   <p>
     バースデーケーキには、乳製品・砂糖不使用の体に優しい「スマッシュケーキ」を特別注文。茉優ちゃんは両手でケーキをぐちゃぐちゃにしながら満面の笑みを見せ、その姿を家族みんなで笑いながら見守った。
   </p>
-
   <p>
-    最近ではつかまり立ちや数歩の一人歩きにも挑戦しており、日に日に世界が広がっている様子。「毎日が発見で、この子に教えてもらうことのほうが多い気がします」という言葉が印象的だった。
+    最近ではつかまり立ちや数歩の一人歩きにも挑戦しており、日に日に世界が広がっている様子。「毎日が発見で、この子に教えてもらうことのほうが多い気がします」という言葉が印象的だった。これからの成長がますます楽しみな茉優ちゃんだ。
   </p>
 </div>
 
-<!-- ===== こんなトピックスも ===== -->
-<div class="related-section">
-  <div class="related-section-title">こんなトピックスも読まれています</div>
+<!-- ===== 関連リンク ===== -->
+<div class="related-links">
+  <a href="#">【関連】1歳の「一升餅」どう準備する？意味と地域差を解説</a>
+  <a href="#">【関連】「スマッシュケーキ」とは？注文方法と注意点まとめ</a>
+  <a href="#">【関連】赤ちゃんの「選び取り」定番アイテムと意味一覧</a>
+  <a href="#">【関連】初歩きはいつ頃？1歳前後の運動発達の目安</a>
+</div>
 
-  <div class="related-item">
-    <div class="related-thumb">🎎</div>
-    <div class="related-info">
-      <div class="related-title-text">「一升餅」の意味と準備のポイントを徹底解説　地域差や現代流アレンジも</div>
-      <div class="related-meta">6/9（月）9:20</div>
-    </div>
+<!-- ===== 知識ブロック ===== -->
+<div style="padding: 14px 14px 4px; border-top: 8px solid #f2f2f2;">
+  <div style="font-size: 13px; font-weight: bold; color: #555; margin-bottom: 10px;">
+    👶 子育てに役立つ知識を深めるためにはどうすれば良いですか？
   </div>
-
-  <div class="related-item">
-    <div class="related-thumb">🎂</div>
-    <div class="related-info">
-      <div class="related-title-text">1歳バースデーに「スマッシュケーキ」が選ばれる理由　注文方法から注意点まで</div>
-      <div class="related-meta">6/7（土）11:00</div>
-    </div>
+</div>
+<div class="info-banner">
+  <div class="info-banner-title">関連する専門情報</div>
+  <div class="info-banner-item">
+    <div class="info-banner-thumb">📖</div>
+    <div class="info-banner-text">赤ちゃんの言語発達　絵本が果たす役割とは</div>
   </div>
-
-  <div class="related-item">
-    <div class="related-thumb">📖</div>
-    <div class="related-info">
-      <div class="related-title-text">「選び取り」で子どもが選んだもの、その後どうなった？先輩ママたちの声</div>
-      <div class="related-meta">6/4（水）10:30</div>
-    </div>
+  <div class="info-banner-item">
+    <div class="info-banner-thumb">🩺</div>
+    <div class="info-banner-text">1歳健診でチェックされること　小児科医が解説</div>
   </div>
-
-  <div class="related-item">
-    <div class="related-thumb">👣</div>
-    <div class="related-info">
-      <div class="related-title-text">赤ちゃんの「初歩き」はいつ頃？平均的な時期と個人差について専門家が解説</div>
-      <div class="related-meta">5/30（金）9:00</div>
-    </div>
+  <div class="info-banner-item">
+    <div class="info-banner-thumb">🍰</div>
+    <div class="info-banner-text">砂糖不使用ケーキ　乳幼児に安全な素材の選び方</div>
   </div>
 </div>
 
-<!-- シェアボタン -->
-<div class="share-row" style="margin: 0 14px;">
-  <button class="share-btn x">𝕏 ポスト</button>
-  <button class="share-btn line">📗 LINE</button>
-  <button class="share-btn copy">🔗 コピー</button>
+<!-- ===== あなたへのおすすめ ===== -->
+<div class="recommend-section">
+  <div class="recommend-title">こんなトピックスも読まれています</div>
+  <div class="recommend-item">
+    <div class="recommend-thumb">🎎</div>
+    <div class="recommend-info">
+      <div class="recommend-headline">「一升餅」の意味と準備のポイントを徹底解説　現代流アレンジも</div>
+      <div class="recommend-meta">6/9（月）9:20</div>
+    </div>
+  </div>
+  <div class="recommend-item">
+    <div class="recommend-thumb">🎂</div>
+    <div class="recommend-info">
+      <div class="recommend-headline">1歳バースデーに「スマッシュケーキ」が選ばれる理由　注文方法から注意点まで</div>
+      <div class="recommend-meta">6/7（土）11:00</div>
+    </div>
+  </div>
+  <div class="recommend-item">
+    <div class="recommend-thumb">📖</div>
+    <div class="recommend-info">
+      <div class="recommend-headline">「選び取り」で子どもが選んだもの、その後どうなった？先輩ママたちのリアルな声</div>
+      <div class="recommend-meta">6/4（水）10:30</div>
+    </div>
+  </div>
+  <div class="recommend-item">
+    <div class="recommend-thumb">👣</div>
+    <div class="recommend-info">
+      <div class="recommend-headline">赤ちゃんの「初歩き」はいつ頃？平均的な時期と個人差について専門家が解説</div>
+      <div class="recommend-meta">5/30（金）9:00</div>
+    </div>
+  </div>
 </div>
 
 <!-- ===== コメント ===== -->
 <div class="comment-section">
   <div class="comment-header">
     <div class="comment-header-left">
-      <span>💬</span> コメント <span style="font-size:13px; color:#888; font-weight:normal;">31件</span>
+      💬 コメントを書く
     </div>
     <div class="comment-toggle">
       <input type="checkbox" /> コメント非表示
     </div>
   </div>
 
-  <div class="comment-write">
-    <span class="comment-write-icon">✏️</span>
-    <span class="comment-write-text">コメントを書く</span>
-  </div>
-
-  <!-- コメント1（エキスパート） -->
+  <!-- コメント1 エキスパート -->
   <div class="comment-item">
-    <div class="comment-item-top">
-      <div class="comment-user-info">
+    <div class="comment-top">
+      <div class="comment-user-row">
         <div class="comment-avatar">🌸</div>
-        <div class="comment-user-detail">
-          <div class="comment-username">
+        <div>
+          <div class="comment-name">
             さくらのはるかぜ
-            <span class="expert-badge">エキスパート</span>
+            <span class="expert-tag">エキスパート</span>
           </div>
-          <div class="comment-time">1時間前　子育てアドバイザー</div>
+          <div class="comment-time-sub">1時間前　子育てアドバイザー／絵本専門士</div>
         </div>
       </div>
       <button class="follow-btn">＋ フォロー</button>
     </div>
-    <div class="comment-text">
-      おめでとうございます🎉 絵本を選ぶとはとても素敵ですね。1歳のこの時期に絵本と触れ合うことが、言語発達にもとても良い影響があると言われています。<span class="more">……もっと見る</span>
+    <div class="comment-body">
+      <span style="background:#e8f5e9;color:#2e7d32;font-size:11px;padding:1px 6px;border-radius:3px;font-weight:bold;margin-right:5px;">補足</span>
+      絵本を選び取るお子さんはとても多いですが、これは「手に取りやすい形」や「色の鮮やかさ」が影響していることも。どれを選んでも個性として温かく見守ってあげてください。<span class="more">……もっと見る</span>
     </div>
-    <div class="comment-reactions">
-      <div class="c-react-item">
+    <div class="comment-sns-icon">🌐</div>
+    <div class="comment-reacts">
+      <div class="c-react">
         <span class="c-react-icon">💡</span>
         <div>
           <div class="c-react-label">参考になった</div>
           <div class="c-react-num">112</div>
         </div>
       </div>
-      <span class="reply-btn">返信 4件</span>
+      <span class="reply-count">返信 4件</span>
     </div>
   </div>
 
   <!-- コメント2 -->
   <div class="comment-item">
-    <div class="comment-item-top">
-      <div class="comment-user-info">
+    <div class="comment-top">
+      <div class="comment-user-row">
         <div class="comment-avatar">🌿</div>
-        <div class="comment-user-detail">
-          <div class="comment-username">みどりの風</div>
-          <div class="comment-time">2時間前</div>
+        <div>
+          <div class="comment-name">みどりの風</div>
+          <div class="comment-time-sub">2時間前</div>
         </div>
       </div>
       <button class="follow-btn">＋ フォロー</button>
     </div>
-    <div class="comment-text">
-      一升餅を背負う姿、目に浮かびます。1歳おめでとう🎂 これからも元気に育ってね。
+    <div class="comment-body">
+      1歳おめでとうございます🎂 一升餅を背負う姿、想像するだけで微笑ましいです。スマッシュケーキの豪快な食べっぷりも最高ですね。<span class="more">……もっと見る</span>
     </div>
-    <div class="comment-reactions">
-      <div class="c-react-item">
+    <div class="comment-reacts">
+      <div class="c-react">
         <span class="c-react-icon">😊</span>
-        <div>
-          <div class="c-react-label">共感した</div>
-          <div class="c-react-num">78</div>
-        </div>
+        <div><div class="c-react-label">共感した</div><div class="c-react-num">78</div></div>
       </div>
-      <div class="c-react-item">
+      <div class="c-react">
         <span class="c-react-icon">🤔</span>
-        <div>
-          <div class="c-react-label">なるほど</div>
-          <div class="c-react-num">12</div>
-        </div>
+        <div><div class="c-react-label">なるほど</div><div class="c-react-num">33</div></div>
       </div>
-      <div class="c-react-item">
+      <div class="c-react">
         <span class="c-react-icon">😥</span>
-        <div>
-          <div class="c-react-label">うーん</div>
-          <div class="c-react-num">3</div>
-        </div>
+        <div><div class="c-react-label">うーん</div><div class="c-react-num">7</div></div>
       </div>
-      <span class="reply-btn">返信 9件</span>
+      <span class="reply-count">返信 9件</span>
     </div>
   </div>
 
   <!-- コメント3 -->
   <div class="comment-item">
-    <div class="comment-item-top">
-      <div class="comment-user-info">
-        <div class="comment-avatar">☀️</div>
-        <div class="comment-user-detail">
-          <div class="comment-username">あおそら日和</div>
-          <div class="comment-time">3時間前</div>
+    <div class="comment-top">
+      <div class="comment-user-row">
+        <div class="comment-avatar" style="background:#fff3e0;">☀️</div>
+        <div>
+          <div class="comment-name">あおそら日和</div>
+          <div class="comment-time-sub">3時間前</div>
         </div>
       </div>
       <button class="follow-btn">＋ フォロー</button>
     </div>
-    <div class="comment-text">
-      「茉優」という名前、ジャスミンのように清らかで本当に素敵ですね。健やかに大きくなってね💕<span class="more">……もっと見る</span>
+    <div class="comment-body">
+      「茉優」という名前、ジャスミンのように清らかで本当に素敵ですね。こういう温かいニュースを読むと心がほっこりします💕
     </div>
-    <div class="comment-reactions">
-      <div class="c-react-item">
+    <div class="comment-reacts">
+      <div class="c-react">
         <span class="c-react-icon">😊</span>
-        <div>
-          <div class="c-react-label">共感した</div>
-          <div class="c-react-num">55</div>
-        </div>
+        <div><div class="c-react-label">共感した</div><div class="c-react-num">55</div></div>
       </div>
-      <div class="c-react-item">
+      <div class="c-react">
         <span class="c-react-icon">🤔</span>
-        <div>
-          <div class="c-react-label">なるほど</div>
-          <div class="c-react-num">8</div>
-        </div>
+        <div><div class="c-react-label">なるほど</div><div class="c-react-num">8</div></div>
       </div>
-      <div class="c-react-item">
+      <div class="c-react">
         <span class="c-react-icon">😥</span>
-        <div>
-          <div class="c-react-label">うーん</div>
-          <div class="c-react-num">2</div>
-        </div>
+        <div><div class="c-react-label">うーん</div><div class="c-react-num">2</div></div>
       </div>
-      <span class="reply-btn">返信 2件</span>
+      <span class="reply-count">返信 2件</span>
     </div>
   </div>
 
+  <a class="see-more-comments" href="#">もっと見る（31件）</a>
+</div>
+
+<!-- ===== 下部おすすめ ===== -->
+<div class="bottom-recommend">
+  <div class="bottom-recommend-title">あなたへのおすすめ記事</div>
+  <div class="br-item">
+    <div class="br-thumb">👨‍👩‍👧</div>
+    <div>
+      <div class="br-text">子育て支援金が2026年度より拡充　対象年齢と支給額はどう変わる</div>
+      <div class="br-meta">子育てニュース編集部　6/10</div>
+    </div>
+  </div>
+  <div class="br-item">
+    <div class="br-thumb">🌙</div>
+    <div>
+      <div class="br-text">赤ちゃんの「夜泣き」はいつ落ち着く？先輩ママ100人の体験談</div>
+      <div class="br-meta">ライフ＆ファミリー通信　6/8</div>
+    </div>
+  </div>
+  <div class="br-item">
+    <div class="br-thumb">📛</div>
+    <div>
+      <div class="br-text">「読み方が難しい名前」ランキング2026　上位に意外な名前も</div>
+      <div class="br-meta">話題の名前ラボ　6/5</div>
+    </div>
+  </div>
+  <div class="br-item">
+    <div class="br-thumb">🏥</div>
+    <div>
+      <div class="br-text">1歳健診で確認すること　小児科医が教える「発達チェックポイント」</div>
+      <div class="br-meta">医療情報メディア　6/3</div>
+    </div>
+  </div>
+  <div class="br-item">
+    <div class="br-thumb">🧸</div>
+    <div>
+      <div class="br-text">赤ちゃんのおもちゃ今年のヒット商品TOP5　専門家おすすめも紹介</div>
+      <div class="br-meta">ベビーグッズ通信　5/28</div>
+    </div>
+  </div>
 </div>
 
 <!-- フッター -->
-<div class="sp-footer">
-  news.yahoo.co.jp
-</div>
+<div class="sp-footer">news.yahoo.co.jp</div>
 
 </body>
 </html>
